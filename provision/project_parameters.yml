@@ -1,0 +1,11 @@
+parameters:
+    env(SYMFONY_SECRET): ThisEzPlatformTokenIsNotSoSecret_PleaseChangeIt
+    env(DATABASE_DRIVER): pdo_mysql
+    env(DATABASE_HOST): localhost
+    env(DATABASE_PORT): null
+    env(DATABASE_NAME): ezplatform
+    env(DATABASE_USER): root
+    env(DATABASE_PASSWORD): root
+    env(DATABASE_CHARSET): utf8mb4
+    env(DATABASE_COLLATION): utf8mb4_unicode_520_ci
+    env(DATABASE_VERSION): mariadb-10.2.26

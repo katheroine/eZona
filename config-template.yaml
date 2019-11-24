@@ -1,0 +1,3 @@
+virtualbox_machine_name: ezona
+# WARNING: This directory will be emptied during the machine creation.
+shared_local_ezplatform_project_directory: /home/username/projects/ezplatform
