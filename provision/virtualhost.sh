@@ -1,9 +1,14 @@
 #!/bin/bash
 
-SOURCE_DESTINATION=/var/www/ezplatform
+source /config/provision/bash_variables_script.sh
 
-chmod +x ${SOURCE_DESTINATION}/bin/vhost.sh
+VHOST_CONF=/etc/apache2/sites-available/ezplatform.conf
 
-cp /vagrant/provision/vhost-template.conf /etc/apache2/sites-available/ezplatform.conf
+cp /config/provision/vhost-template.conf $VHOST_CONF
+
+sed -i 's/%DOMAIN%/'${DOMAIN}'/' $VHOST_CONF
+sed -i 's/%HOST%/'${HOST}'/' $VHOST_CONF
+sed -i 's@%PROJECT_DIR%@'${SOURCE_DESTINATION}'@' $VHOST_CONF
+
 a2ensite ezplatform.conf
 systemctl reload apache2

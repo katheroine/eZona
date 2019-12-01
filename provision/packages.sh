@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /config/provision/bash_variables_script.sh
+
 MYSQL_VERSION=5.7
 PHP_VERSION=7.2
 
@@ -32,7 +34,6 @@ echo "PHP packages: ${php_packages[@]}"
 
 apache_packages=(
 	apache2
-	#libapache2-mod-fastcgi
 )
 
 echo "Apache packages: ${apache_packages[@]}"
@@ -56,10 +57,6 @@ echo "Packages: ${packages[@]}"
 echo "Installing aptitude packages..."
 
 aptitude install --assume-yes ${packages[@]}
-
-# # Istallation of problematic Fast CGI Apache module
-# wget http://mirrors.kernel.org/ubuntu/pool/multiverse/liba/libapache-mod-fastcgi/libapache2-mod-fastcgi_2.4.7~0910052141-1.2_amd64.deb
-# sudo dpkg -i libapache2-mod-fastcgi_2.4.7~0910052141-1.2_amd64.deb
 
 # Installation of problematic NodeJS package
 aptitude remove -y nodejs

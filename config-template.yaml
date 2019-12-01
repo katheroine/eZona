@@ -1,3 +1,11 @@
 virtualbox_machine_name: ezona
+virtual_machine_www_user: vagrant
+virtual_machine_www_group: vagrant
+virtual_machine_external_ip: 192.168.33.10
+www_server_forwarded_port: 8633
+sql_server_formwarded_port: 13306
+virtual_machine_ram: 4096
 # WARNING: This directory will be emptied during the machine creation.
 shared_local_ezplatform_project_directory: /home/username/projects/ezplatform
+virtual_ezplatform_project_directory: /var/www/ezplatform
+project_domain: ezplatform.local

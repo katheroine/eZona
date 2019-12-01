@@ -1,13 +1,10 @@
 #!/bin/bash
 
+source /config/provision/bash_variables_script.sh
+
 EZPLATFORM_TMP_DIR=/var/ezona/ezplatform
 
 mkdir -m 774 -p ${EZPLATFORM_TMP_DIR}
-
-SOURCE_PROJECT=ezsystems/ezplatform
-SOURCE_DESTINATION=/var/www/ezplatform 
-USER=vagrant
-GROUP=vagrant
 
 export SYMFONY_ENV="dev"
 
