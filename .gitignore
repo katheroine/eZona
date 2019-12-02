@@ -2,3 +2,6 @@
 ubuntu-bionic-18.04-cloudimg-console.log
 config.yaml
 provision/bash_variables_script.sh
+node_modules/
+yarn.lock
+

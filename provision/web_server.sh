@@ -25,9 +25,6 @@ service apache2 restart
 rm /var/www/html/index.html
 echo "<?php phpinfo();" > /var/www/html/index.php
 
-# USER=`ruby -e "require 'yaml'; user_config = YAML.load_file('../config.yaml'); puts user_config['virtual_machine_www_user']"`
-# GROUP=`ruby -e "require 'yaml'; user_config = YAML.load_file('../config.yaml'); puts user_config['virtual_machine_www_user']"`
-
 APACHE_ENVARS_FILE=/etc/apache2/envvars
 sed -i 's/^export APACHE_RUN_USER=.*$/export APACHE_RUN_USER='${USER}'/' $APACHE_ENVARS_FILE
 sed -i 's/^export APACHE_RUN_GROUP=.*$/export APACHE_RUN_GROUP='${GROUP}'/' $APACHE_ENVARS_FILE
